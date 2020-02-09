@@ -1,0 +1,24 @@
+{
+  "name": "bot_card-pio_IFCE",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abras-lucas/bot_card-pio_IFCE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abras-lucas/bot_card-pio_IFCE/issues"
+  },
+  "homepage": "https://github.com/abras-lucas/bot_card-pio_IFCE#readme",
+  "dependencies": {
+    "moment": "2.20.1",
+    "telegraf": "3.17.3"
+  }
+}

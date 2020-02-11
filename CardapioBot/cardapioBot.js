@@ -3,147 +3,219 @@ const Telegraf = require('telegraf')
 const moment = require('moment')
 const bot = new Telegraf(env.token)
 
+var segunda = {
+    manha : "Macarronada com suco",
+    tarde : "Macarronada com suco",
+    noite : "Paçoca"
+}
+
+var terca = {
+    manha : "Sopa e pão",
+    tarde : "Sopa e pão",
+    noite : "Sopa e pão"
+}
+
+var quarta = {
+    manha : "Bolacha e suco",
+    tarde : "Bolacha e suco",
+    noite : "Arroz e paçoca"
+}
+
+var quinta = {
+    manha : "Vitamina e maçã",
+    tarde : "Vitamina e maçã",
+    noite : "Arroz, macarrão e salada"
+}
+
+var sexta = {
+    manha : "Baião com frango",
+    tarde : "Bolacha com suco",
+    noite : "Macarronada"
+}
+
 bot.start(ctx => {
     ctx.reply('Olá, bem-vind@ ao cardápio do IFCE-Campus Jaguaribe!'
     + '\nEsse bot funciona da seguinte forma:'
-    + '\n--> Digite /semana para saber o cardápio da semana'
+    + '\n--> Lista de comandos (basta clicar):'
+    + '\n--> /semana - Exibe o cardápio da semana'
+    + '\n--> /segunda - Exibe o cardápio da segunda'
+    + '\n--> /terca - Exibe o cardápio da terça'
+    + '\n--> /quarta - Exibe o cardápio da quarta'
+    + '\n--> /quinta - Exibe o cardápio da quinta'
+    + '\n--> /sexta - Exibe o cardápio da sexta'
     + '\n--> Digite o dia da semana para saber o cardápio previsto para todos os turnos do dia digitado.'
     + ' Exemplo: segunda'
     + '\n--> Digite o dia da semana acompanhado do turno, para saber a refeição daquele turno específico.'
-    + ' Exemplo: segunda manhã')
+    + ' Exemplo: segunda manhã'
+    + '\n--> Para exibir essa mensagem novamente, digite /start')
 })
 
 bot.hears(/segunda manhã/i, ctx => {
     ctx.reply('Na segunda-feira, pela manhã, teremos:'
-    + '\nMacarronada com suco')
+    + `\nManhã: ${segunda.manha}`)
 })
 
 bot.hears(/segunda tarde/i, ctx => {
     ctx.reply('Na segunda-feira, pela tarde, teremos:'
-    + '\nMacarronada com suco')
+    + `\nTarde: ${segunda.tarde}`)
 })
 
 bot.hears(/segunda noite/i, ctx => {
     ctx.reply('Na segunda-feira, pela noite, teremos:'
-    + '\nPaçoca')
+    + `\nNoite: ${segunda.noite}`)
 })
 
 bot.hears(/segunda/i, ctx => {
     ctx.reply('Na segunda-feira teremos:'
-    + '\nManhã: Macarronada com suco'
-    + '\nTarde: Macarronada com suco'
-    + '\nNoite: Paçoca')
+    + `\nManhã: ${segunda.manha}`
+    + `\nTarde: ${segunda.tarde}`
+    + `\nNoite: ${segunda.noite}`)
 })
 
 bot.hears(/terça manhã/i, ctx => {
     ctx.reply('Na terça-feira, pela manhã, teremos:'
-    + '\nSopa e pão')
+    + `\nManhã: ${terca.manha}`)
 })
 
 bot.hears(/terça tarde/i, ctx => {
     ctx.reply('Na terça-feira, pela tarde, teremos:'
-    + '\nSopa e pão')
+    + `\nTarde: ${terca.tarde}`)
 })
 
 bot.hears(/terça noite/i, ctx => {
     ctx.reply('Na terça-feira, pela noite, teremos:'
-    + '\nSopa e pão')
+    + `\nNoite: ${terca.noite}`)
 })
 
 bot.hears(/terça/i, ctx => {
     ctx.reply('Na terça-feira teremos:'
-    + '\nManhã: Sopa e pão'
-    + '\nTarde: Sopa e pão'
-    + '\nNoite: Sopa e pão')
+    + `\nManhã: ${terca.manha}`
+    + `\nTarde: ${terca.tarde}`
+    + `\nNOite: ${terca.noite}`)
 })
 
 bot.hears(/quarta manhã/i, ctx => {
     ctx.reply('Na quarta-feira, pela manhã, teremos:'
-    + '\nBolacha e suco')
+    + `\nManhã: ${quarta.manha}`)
 })
 
 bot.hears(/quarta tarde/i, ctx => {
     ctx.reply('Na quarta-feira, pela tarde, teremos:'
-    + '\nBolacha e suco')
+    + `\nTarde: ${quarta.tarde}`)
 })
 
 bot.hears(/quarta noite/i, ctx => {
     ctx.reply('Na quarta-feira, pela noite, teremos:'
-    + '\nArroz e paçoca')
+    + `\nNoite: ${quarta.noite}`)
 })
 
 bot.hears(/quarta/i, ctx => {
     ctx.reply('Na quarta-feira teremos:'
-    + '\nManhã: Bolacha e suco'
-    + '\nTarde: Bolacha e suco'
-    + '\nNoite: Arroz e paçoca')
+    + `\nManhã: ${quarta.manha}`
+    + `\nTarde: ${quarta.tarde}`
+    + `\nNoite: ${quarta.noite}`)
 })
 
 bot.hears(/quinta manhã/i, ctx => {
     ctx.reply('Na quinta-feira, pela manhã, teremos:'
-    + '\nVitamina e maçã')
+    + `\nManhã: ${quinta.manha}`)
 })
 
 bot.hears(/quinta tarde/i, ctx => {
     ctx.reply('Na quinta-feira, pela tarde, teremos:'
-    + '\nVitamina e maçã')
+    + `\nTarde: ${quinta.tarde}`)
 })
 
 bot.hears(/quinta noite/i, ctx => {
     ctx.reply('Na quinta-feira, pela noite, teremos:'
-    + '\nArroz, macarrão e salada')
+    + `\nNoite: ${quinta.noite}`)
 })
 
 bot.hears(/quinta/i, ctx => {
     ctx.reply('Na quinta-feira teremos:'
-    + '\nManhã: Vitamina e maçã'
-    + '\nTarde: Vitamina e maçã'
-    + '\nNoite: Arroz, macarrão e salada')
+    + `\nManhã: ${quinta.manha}`
+    + `\nTarde: ${quinta.tarde}`
+    + `\nNoite: ${quinta.noite}`)
 })
 
 bot.hears(/sexta manhã/i, ctx => {
     ctx.reply('Na sexta-feira, pela manhã, teremos:'
-    + '\nBaião com frango')
+    + `\nManhã: ${sexta.manha}`)
 })
 
 bot.hears(/sexta tarde/i, ctx => {
     ctx.reply('Na sexta-feira, pela tarde, teremos:'
-    + '\nBolacha com suco')
+    + `\nTarde: ${sexta.tarde}`)
 })
 
 bot.hears(/sexta noite/i, ctx => {
     ctx.reply('Na sexta-feira, pela noite, teremos:'
-    + '\nMacarronada')
+    + `\nNoite: ${sexta.noite}`)
 })
 
 bot.hears(/sexta/i, ctx => {
     ctx.reply('Na sexta-feira teremos:'
-    + '\nManhã: Baião com frango'
-    + '\nTarde: Bolacha com suco'
-    + '\nNoite: Macarronada')
+    + `\nManhã: ${sexta.manha}`
+    + `\nTarde: ${sexta.tarde}`
+    + `\nNoite: ${sexta.noite}`)
 })
 
 bot.command('semana', ctx => ctx.replyWithHTML('O cardápio da semana é:'
     + '\n--> <b>Segunda-feira:</b>'
-    + '\nManhã: Macarronada com suco'
-    + '\nTarde: Macarronada com suco'
-    + '\nNoite: Paçoca\n'
+    + `\nManhã: ${segunda.manha}`
+    + `\nTarde: ${segunda.tarde}`
+    + `\nNoite: ${segunda.noite}\n`
     + '\n--> <b>Terça-feira:</b>'
-    + '\nManhã: Sopa e pão'
-    + '\nTarde: Sopa e pão'
-    + '\nNoite: Sopa e pão\n'
+    + `\nManhã: ${terca.manha}`
+    + `\nTarde: ${terca.tarde}`
+    + `\nNOite: ${terca.noite}\n`
     + '\n--> <b>Quarta-feira:</b>'
-    + '\nManhã: Bolacha e suco'
-    + '\nTarde: Bolacha e suco'
-    + '\nNoite: Arroz e paçoca\n'
+    + `\nManhã: ${quarta.manha}`
+    + `\nTarde: ${quarta.tarde}`
+    + `\nNoite: ${quarta.noite}\n`
     + '\n--> <b>Quinta-feira:</b>'
-    + '\nManhã: Vitamina e maçã'
-    + '\nTarde: Vitamina e maçã'
-    + '\nNoite: Arroz, macarrão e salada\n'
+    + `\nManhã: ${quinta.manha}`
+    + `\nTarde: ${quinta.tarde}`
+    + `\nNoite: ${quinta.noite}\n`
     + '\n--> <b>Sexta-feira:</b>'
-    + '\nManhã: Baião com frango'
-    + '\nTarde: Bolacha com suco'
-    + '\nNoite: Macarronada\n')
+    + `\nManhã: ${sexta.manha}`
+    + `\nTarde: ${sexta.tarde}`
+    + `\nNoite: ${sexta.noite}\n`)
 )
+
+bot.command('segunda', ctx => {
+    ctx.reply('Na segunda-feira teremos:'
+    + `\nManhã: ${segunda.manha}`
+    + `\nTarde: ${segunda.tarde}`
+    + `\nNoite: ${segunda.noite}`)
+})
+
+bot.command('terca', ctx => {
+    ctx.reply('Na terça-feira teremos:'
+    + `\nManhã: ${terca.manha}`
+    + `\nTarde: ${terca.tarde}`
+    + `\nNoite: ${terca.noite}`)
+})
+
+bot.command('quarta', ctx => {
+    ctx.reply('Na quarta-feira teremos:'
+    + `\nManhã: ${quarta.manha}`
+    + `\nTarde: ${quarta.tarde}`
+    + `\nNoite: ${quarta.noite}`)
+})
+
+bot.command('quinta', ctx => {
+    ctx.reply('Na quinta-feira teremos:'
+    + `\nManhã: ${quinta.manha}`
+    + `\nTarde: ${quinta.tarde}`
+    + `\nNoite: ${quinta.noite}`)
+})
+
+bot.command('sexta', ctx => {
+    ctx.reply('Na sexta-feira teremos:'
+    + `\nManhã: ${sexta.manha}`
+    + `\nTarde: ${sexta.tarde}`
+    + `\nNoite: ${sexta.noite}`)
+})
 
 bot.startPolling()

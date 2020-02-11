@@ -35,7 +35,7 @@ var sexta = {
 
 bot.start(ctx => {
     ctx.reply('Olá, bem-vind@ ao cardápio do IFCE-Campus Jaguaribe!'
-    + '\nEsse bot funciona da seguinte forma:'
+    + '\nEis o que posso fazer por você:'
     + '\n--> Lista de comandos (basta clicar):'
     + '\n--> /semana - Exibe o cardápio da semana'
     + '\n--> /segunda - Exibe o cardápio da segunda'
@@ -158,6 +158,14 @@ bot.hears(/sexta/i, ctx => {
     + `\nManhã: ${sexta.manha}`
     + `\nTarde: ${sexta.tarde}`
     + `\nNoite: ${sexta.noite}`)
+})
+
+bot.hears(/sábado/i, ctx => {
+    ctx.reply('Hey! Nós também descansamos aos fim de semana, viu?! 😤')
+})
+
+bot.hears(/domingo/i, ctx => {
+    ctx.reply('Hey! Nós também descansamos aos fim de semana, viu?! 😤')
 })
 
 bot.command('semana', ctx => ctx.replyWithHTML('O cardápio da semana é:'

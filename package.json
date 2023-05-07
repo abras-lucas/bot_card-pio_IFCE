@@ -19,6 +19,6 @@
   "homepage": "https://github.com/abras-lucas/bot_card-pio_IFCE#readme",
   "dependencies": {
     "moment": "2.20.1",
-    "telegraf": "3.17.3"
+    "telegraf": "3.40.0"
   }
 }
